@@ -24,7 +24,12 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: [true, "The C_password is required !!!!"],
     minlength: 8,
-    // validate:
+    validate: {
+      validator: function (cPass) {
+        return cPass === this.password;
+      },
+      message: "Pass and cPass does not match !!!!",
+    },
   },
   role: {
     type: String,
@@ -32,6 +37,10 @@ const userSchema = new mongoose.Schema({
     default: "user",
   },
   created_at: {
+    type: Date,
+    default: Date.now(),
+  },
+  password_changed_at: {
     type: Date,
     default: Date.now(),
   },
