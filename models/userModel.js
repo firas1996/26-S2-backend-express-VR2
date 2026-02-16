@@ -20,6 +20,12 @@ const userSchema = new mongoose.Schema({
     required: [true, "The password is required !!!!"],
     minlength: 8,
   },
+  confirm_password: {
+    type: String,
+    required: [true, "The C_password is required !!!!"],
+    minlength: 8,
+    // validate:
+  },
   role: {
     type: String,
     enum: ["admin", "user"],
