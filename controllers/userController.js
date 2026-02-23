@@ -14,3 +14,5 @@ exports.createUser = async (req, res) => {
     });
   }
 };
+
+// Get All Users
