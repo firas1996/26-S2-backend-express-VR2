@@ -1,3 +1,4 @@
+const { signUp } = require("../controllers/authController");
 const {
   createUser,
   getUsers,
@@ -8,10 +9,12 @@ const {
 
 const router = require("express").Router();
 
-router.route("/").post(createUser).get(getUsers);
+router.post("/signUp", signUp);
+
+router.route("/users").post(createUser).get(getUsers);
 
 router
-  .route("/:id")
+  .route("/users/:id")
   .get(getUserById)
   .patch(updateUserById)
   .delete(deleteUserById);
