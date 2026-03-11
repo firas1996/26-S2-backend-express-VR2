@@ -44,3 +44,16 @@ exports.protectorMW = async (req, res, next) => {
     });
   }
 };
+
+exports.checkRoleMW = (...roles) => {
+  return async (req, res, next) => {
+    try {
+      // /dfghfdfbgdfgsdgkhsdbfkhsdbfskd
+    } catch (error) {
+      res.status(400).json({
+        message: "Fail !!",
+        error: error,
+      });
+    }
+  };
+};
