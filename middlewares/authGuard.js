@@ -49,6 +49,7 @@ exports.checkRoleMW = (...roles) => {
   return async (req, res, next) => {
     try {
       // /dfghfdfbgdfgsdgkhsdbfkhsdbfskd
+      next();
     } catch (error) {
       res.status(400).json({
         message: "Fail !!",
