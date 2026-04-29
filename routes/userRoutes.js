@@ -13,10 +13,7 @@ const router = require("express").Router();
 router.post("/signUp", signUp);
 router.post("/signIn", signIn);
 
-router
-  .route("/users")
-  .post(createUser)
-  .get(protectorMW, checkRoleMW("admin", "user"), getUsers);
+router.route("/users").post(createUser).get(getUsers);
 
 router
   .route("/users/:id")
